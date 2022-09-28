@@ -52,5 +52,11 @@
 		<PackageReference Include="Microsoft.Extensions.Http" Version="7.0.0-rc.1.22426.10" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
 	</ItemGroup>
+	
+	<ItemGroup>
+	  <MauiXaml Update="Views\ManageToDoPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
 
 </Project>

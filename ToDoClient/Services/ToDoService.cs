@@ -3,7 +3,7 @@
 using System.Net.Http.Json;
 using ToDoClient.Models;
 using Newtonsoft.Json;
-using Android.OS;
+using System.Diagnostics;
 
 namespace ToDoClient.Services;
 
@@ -41,11 +41,10 @@ public class ToDoService : IToDoService
 
         catch (Exception ex)
         {
-
+            Debug.WriteLine($"{ex.Message}Failed To Create To Do Item");
             await Shell.Current.DisplayAlert(
                 "Failed To Create To Do Item.", ex.Message, "OK");
         }
-        
     }
 
     public async Task DeleteToDoAsync(int id)
@@ -65,6 +64,7 @@ public class ToDoService : IToDoService
         }
         catch (Exception ex)
         {
+            Debug.WriteLine( $"{ex.Message}Failed To Delete To Do Item");
             await Shell.Current.DisplayAlert(
                 "Failed To Delete To Do Item.", ex.Message, "OK");
         }
@@ -88,6 +88,8 @@ public class ToDoService : IToDoService
         }
         catch (Exception ex)
         {
+            Debug.WriteLine(message: $"{ex.Message}Failed To Get To Do Item List");
+
             await Shell.Current.DisplayAlert(
                 "Failed To Get To Do List.", ex.Message, "OK");
         }
@@ -117,6 +119,7 @@ public class ToDoService : IToDoService
         }
         catch (Exception ex)
         {
+            Debug.WriteLine(message: $"{ex.Message}Failed To Update To Do Item");
             await Shell.Current.DisplayAlert(
                 "Failed To Update To Do Item.", ex.Message, "OK");
         }

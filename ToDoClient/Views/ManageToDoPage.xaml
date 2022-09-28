@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:ToDoClient.Models"
+             x:Class="ToDoClient.Views.ManageToDoPage"
+             Title="Manage To Do">
+
+    <ContentPage.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="0, 5, 0, 5"/>
+            <Setter Property="BackgroundColor" Value="LightYellow"/>
+            <Setter Property="BorderColor" Value="Green"/>
+            <Setter Property="BorderWidth" Value="5"/>
+            <Setter Property="CornerRadius" Value="50"/>
+            <Setter Property="TextColor" Value="Green"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="WidthRequest" Value="200"/>
+        </Style>
+    </ContentPage.Resources>
+    
+    <VerticalStackLayout BackgroundColor="LightSlateGrey" Padding="20">
+        
+        <Label 
+            Text="What do you want to do?"
+            FontSize="25"
+            TextColor="Black"
+            HorizontalOptions="Center"
+            FontAttributes="Bold"/>
+        
+        <Frame BorderColor="Black" 
+               Padding="0" 
+               BackgroundColor="LightYellow" 
+               Margin="20"
+               CornerRadius="50">
+            
+            <Entry Text="{Binding Path=ToDo.ToDoName}" 
+                   Placeholder="Enter A To Do"
+                   PlaceholderColor="Black"
+                   FontSize="Medium"
+                   WidthRequest="350"
+                   HorizontalTextAlignment="Center"
+                   FontAttributes="Bold"
+                   TextColor="Black"
+                   VerticalOptions="FillAndExpand"/>
+        </Frame>
+
+        <Button Text="Save"
+                Clicked="OnSaveButton_Clicked"/>
+        
+        <Button Text="Delete"
+                Clicked="OnDeleteButton_Clicked"/>
+        
+        <Button Text="Cancel" 
+                Clicked="OnCancelButton_Clicked"/>
+        
+    </VerticalStackLayout>
+</ContentPage>
