@@ -1,2 +1,5 @@
 # ToDoClient
-Demo .Net Maui To Do App
+Demo To Do App
+- .Net Maui
+- Sqlite
+- .Net Web Api (Mininal Api)
